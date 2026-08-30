@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CSS animations used across Yasmin Ofoghi's website, plus a feedback form.">
+  <meta name="keywords" content="HTML5, CSS, animations, feedback">
+  <meta name="author" content="Yasmin Ofoghi">
+  <title>Animations &amp; Review — Yasmin Ofoghi</title>
+  <link href="style/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><a href="index.html">SUT</a></div>
+    <a id="top"></a>
+    <ul class="navigation">
+      <li class="navlist"><a href="index.html"><i class=""></i> Homepage</a></li>
+      <li class="navlist"><a href="aboutme.html"><i class=""></i> About me</a></li>
+      <li class="navlist"><a href="hometown.html"><i class=""></i> Hometown</a></li>
+      <li class="navlist"><a href="achievements.html"><i class=""></i> Achievements</a></li>
+      <li class="navlist"><a href="animations.html"><i class=""></i> Animations</a></li>
+    </ul>
+  </nav>
+
+  <fieldset class="pagefieldset fade-in">
+    <legend><h1 class="no-dot">Animations &amp; Review</h1></legend>
+    <article>
+      <h3>Hello!</h3>
+      
+      <section id="animationinfo">
+        <h2>CSS Animations</h2>
+        <p>Two custom CSS animations are implemented across the site to enhance visual feedback and page transitions:</p>
+
+        <h3>1. Logo Spin (<code>.nav-logo</code>)</h3>
+        <ul>
+          <li><strong>Effect:</strong> Hovering over the logo in the top-left navigation triggers a 360&deg; rotation.</li>
+          <li><strong>Demonstration:</strong> See it in action on the <a href="index.html">Homepage</a> navigation bar.</li>
+        </ul>
+
+        <h3>2. Fade &amp; Lift on Load (<code>.fade-in</code>)</h3>
+        <ul>
+          <li><strong>Effect:</strong> The main content block on every page smoothly fades in and lifts upward on page load.</li>
+          <li><strong>Demonstration:</strong> Refresh this page, or visit the <a href="hometown.html">Hometown</a> page to view the transition.</li>
+        </ul>
+
+        <blockquote class="motion-note">
+          <strong>Accessibility Note:</strong> Both animations adhere to web accessibility guidelines by respecting the <code>prefers-reduced-motion</code> media query, disabling movement for users with reduced motion enabled in their OS.
+        </blockquote>
+
+        <div class="references">
+          <h4>References</h4>
+          <ul>
+            <li>
+              <strong>CSS Animations &amp; Motion:</strong> Mozilla. (n.d.). <em>Using CSS animations</em>. MDN Web Docs. 
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations</a>
+            </li>
+            <li>
+              <strong>Accessibility Specification:</strong> W3C. (2023). <em>Media Queries Level 5: prefers-reduced-motion</em>. W3C. 
+              <a href="https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion" target="_blank" rel="noopener">https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion</a>
+            </li>
+            <li>
+              <strong>Icon Framework:</strong> Fonticons, Inc. (2024). <em>Font Awesome</em> (Version 6.5.1) [Icon library]. Cloudflare CDN. 
+              <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <hr>
+
+      <section id="reviewform">
+        <h3>Review</h3>
+        <form method="post" action="http://mercury.swin.edu.au/it000000/cos10005/surveytest.php">
+          <label for="givenname">Given name:</label>
+          <input type="text" name="givenname" id="givenname" maxlength="15" size="15" required>
+
+          <label for="familyname">Family name (optional):</label>
+          <input type="text" name="familyname" id="familyname" maxlength="15" size="15">
+
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="6" cols="50" maxlength="250" placeholder="Write your feedback about this website here!"></textarea>
+
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset form">
+        </form>
+        <aside class="thanks">
+          <h4>Thanks for the feedback!</h4>
+        </aside>
+      </section>
+    </article>
+  </fieldset>
+
+  <footer>
+    <a href="#top">@Yasmin Ofoghi <i class="fa-solid fa-circle-up"></i></a>
+  </footer>
+</body>
+</html>
