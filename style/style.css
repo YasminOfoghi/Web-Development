@@ -4,350 +4,194 @@
 
 * { box-sizing: border-box; }
 
-
 body {
-
   margin: 0;
-
   font-family: 'Public Sans', 'Segoe UI', Arial, sans-serif;
-
   background-color: var(--paper);
-
   color: var(--ink);
-
   line-height: 1.6;
-
   font-size: 1rem;
-
 }
-
 /* Grouping selector: shared heading treatment */
-
 h1, h2, h3, h4 {
-
   font-family: 'Fraunces', Georgia, serif;
-
   font-weight: 600;
-
   color: var(--forest);
-
   margin-top: 0;
-
 }
 h1 { font-size: 2.1rem; }
-
 h2 { font-size: 1.5rem; }
-
 h3 { font-size: 1.15rem; }
-
 .pagefieldset h1::before {
-
   content: "";
-
   display: inline-block;
-
   width: 10px;
-
   height: 10px;
-
   border-radius: 50%;
-
   background: var(--ochre);
-
   margin-right: 10px;
-
   vertical-align: middle;
-
 }
 a {
-
   color: var(--rust);
-
   text-decoration: none;
-
 }
 hr {
-
   border: none;
-
   height: 2px;
-
   margin: 2rem 0;
-
   background: linear-gradient(90deg, var(--ochre), var(--paper-line) 60%, transparent);
-
 }
 img {
-
   max-width: 100%;
-
   display: block;
-
   border-radius: var(--radius);
-
 }
 table { border-collapse: collapse; width: 100%; }
 blockquote {
-
   border: 2px solid maroon;
-
   box-shadow: 5px 5px 10px rgba(218, 123, 123, 0.5);
-
   margin: 1.5rem 0;
-
   padding: 0.25rem 0 0.25rem 1rem;
-
   font-style: italic;
-
   color: var(--forest);
-
 }
 fieldset {
-
   border: 1px solid var(--paper-line);
-
   border-radius: var(--radius);
-
   padding: 1.5rem;
-
 }
 legend { padding: 0 0.5rem; }
 #top { display: block; position: relative; top: -70px; visibility: hidden; }
 
-
 /* -- Class selectors -- */
-
 .eyebrow {
-
   text-transform: uppercase;
-
   letter-spacing: 0.12em;
-
   font-size: 1.75rem;
-
   color:lightgreen;
-
   font-weight: 700;
-
 }
 .card {
-
   background: #fff;
-
   border: 1px solid var(--paper-line);
-
   border-radius: var(--radius);
-
   padding: 1.25rem;
-
 }
 .tag-list {
-
   list-style: none;
-
   padding: 0;
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 0.5rem;
-
 }
 .tag-list li {
-
   background: var(--forest);
-
   color: var(--paper);
-
   font-family: 'IBM Plex Mono', monospace;
-
   font-size: 0.8rem;
-
   padding: 0.3rem 0.7rem;
-
   border-radius: 999px;
-
 }
 :root {
-
   --paper: #F2ECD8;
-
   --ink: #262220;
-
   --forest: #1B2E23;
-
   --ochre: #B8842E;
-
   --rust: #8B3A2B;
-
   --paper-line: #DCD3B4;
-
   --radius: 4px;
-
 }
 
 nav {
-
   background: #228B22;
-
   color: var(--paper);
-
   padding: 0.75rem 1.5rem;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   flex-wrap: wrap;
-
   position: sticky;
-
   top: 0;
-
   z-index: 10;
-
 }
 .nav-logo a {
-
   color: yellow;
-
   font-family: 'Fraunces', serif;
-
   font-weight: 700;
-
   font-size: 1.8rem; /* Increased from 1.3rem */
-
   border: 2px solid yellow;
-
   border-radius: 50%; /* Fixed to make a perfect circle */
-
   width: 4.5rem;      /* Fixed syntax & increased from 3rem */
-
   height: 4.5rem;     /* Fixed syntax & increased from 3rem */
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
 }
-
 /* Animation 1: logo spins on hover */
-
 .nav-logo a:hover {
-
   animation: spin 0.6s ease-in-out;
-
 }
 
 @keyframes spin {
-
   from { transform: rotate(0deg); }
-
   to   { transform: rotate(360deg); }
-
 }
 .navigation {
-
   list-style: none;
-
   display: flex;
-
   gap: 1.5rem;
-
   margin: 0.5rem 0 0;
-
   padding: 0;
-
 }
 .navigation li a {
-
   color: var(--paper);
-
   font-weight: 600;
-
   padding-bottom: 3px;
-
   border-bottom: 2px solid transparent;
-
   transition: border-color 0.2s ease;
-
 }
 .navigation li a:hover,
-
 .navigation li a:focus {
-
   border-bottom: 2px solid var(--ochre);
-
 }
 .navigation i { margin-right: 0.35rem; }
-
 /* -- Main content wrapper -- */
-
 main, .pagefieldset {
-
   max-width: 960px;
-
   margin: 2rem auto;
-
   padding: 2.5rem;
-
 }
-
 .no-break {
-
   white-space: nowrap;
-
 }
-
 /* Two-column info layout used on About/Hometown/Achievements */
 
 .split {
-
   display: grid;
-
   grid-template-columns: 1.3fr 1fr;
-
   gap: 2rem;
-
   align-items: start;
-
 }
 /* Animation 2: page content fades and lifts in on load */
 
 .fade-in {
-
   animation: fadeUp 0.7s ease-out both;
-
 }
 
 @keyframes fadeUp {
-
   from { opacity: 0; transform: translateY(16px); }
-
   to   { opacity: 1; transform: translateY(0); }
-
 }
 @media (prefers-reduced-motion: reduce) {
-
   .fade-in, .nav-logo a:hover { animation: none; }
-
 }
 
 footer {
-
   text-align: center;
-
   padding: 1.5rem;
-
   background: #228B22;;
-
   color: var(--paper);
-
 }
 footer a { color: var(--paper); font-weight: 600; }
 footer a:hover { color: var(--ochre); }
@@ -355,96 +199,58 @@ footer a:hover { color: var(--ochre); }
 /* -- Timetable -- */
 
 .timetable {
-
   border-collapse: collapse;
-
   width: 100%;
-
 }
 
 .timetable th,
 
 .timetable td {
-
   border: 1px solid grey;
-
   padding: 0.5rem;
-
   text-align: center;
-
   font-family: 'IBM Plex Mono', monospace;
-
   font-size: 0.85rem;
-
 }
 
 .timetable th {
-
   background: var(--forest);
-
   color: var(--paper);
-
 }
 
 .timetable td.busy {
-
   background: #E7DCC0;
-
   color: var(--forest);
-
   font-weight: 600;
-
 }
 #reviewform label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
 #reviewform input[type="text"],
-
 #reviewform textarea {
-
   width: 100%;
-
   max-width: 360px;
-
   padding: 0.5rem;
-
   border: 1px solid var(--paper-line);
-
   border-radius: var(--radius);
-
   margin-bottom: 1rem;
-
   font-family: inherit;
-
 }
 #reviewform input[type="submit"],
-
 #reviewform input[type="reset"] {
-
   background: var(--ochre);
-
   border: none;
-
   color: var(--ink);
-
   font-weight: 700;
-
   padding: 0.5rem 1.2rem;
-
   border-radius: var(--radius);
-
   cursor: pointer;
 
 }
 #reviewform input[type="reset"] { background: var(--paper-line); }
 aside.thanks {
-
   margin-top: 1rem;
-
   padding: 0.75rem 1rem;
-
   border-left: 3px solid var(--ochre);
-
   background: #fff;
-
 }
 
 /* ============================================================
@@ -454,39 +260,25 @@ aside.thanks {
    ============================================================ */
 
 @media screen and (min-width: 769px) {
-
   .headerbox {
-
     background: linear-gradient(120deg, #1B2E23 0%, #2C4436 100%);
-
     color: #F2ECD8;
-
     padding: 4rem 3rem;
-
     border-radius: 0 0 12px 12px;
-
   }
 
   .headerbox h1 { color: #F2ECD8; font-size: 2.6rem; }
-
   .headerbox span { color: #c8bc66; }
   .intro { max-width: 640px; }
   .next {
 
     display: inline-block;
-
     margin-top: 1rem;
-
     background: #c8bc66;;
-
     color: #1B2E23;
-
     font-weight: 700;
-
     padding: 0.6rem 1.4rem;
-
     border-radius: 999px;
-
   }
 
 }
